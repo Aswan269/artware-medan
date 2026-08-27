@@ -1,0 +1,97 @@
+/* ==========================================================================
+   ARTWARE MEDAN — DESIGN TOKENS
+   Sumber kebenaran tunggal untuk warna, tipografi, spacing, dsb.
+   Diverifikasi contrast ratio-nya sebelum dipakai (lihat catatan di bawah).
+   ========================================================================== */
+
+:root {
+  /* ---------- Color: Base ---------- */
+  --color-bg: #F5F4F1;
+  --color-bg-elevated: #FBFAF8;
+  --color-bg-inverse: #1B2A4A;
+
+  /* ---------- Color: Text ---------- */
+  --color-text: #1C1B19;          /* 15.65:1 di atas --color-bg */
+  --color-text-muted: #55524C;    /* 7.08:1 di atas --color-bg */
+  --color-text-faint: #8A867D;    /* 3.30:1 — HANYA untuk caption non-esensial, jangan untuk teks penting */
+  --color-text-on-navy: #F5F4F1;  /* 12.93:1 di atas --color-navy */
+  --color-text-on-amber: #1C1B19; /* 5.12:1 di atas --color-amber */
+
+  /* ---------- Color: Brand ---------- */
+  --color-navy: #1B2A4A;          /* 12.93:1 di atas --color-bg */
+  --color-navy-dark: #131F38;
+  --color-navy-tint: #E7EAF1;
+
+  --color-amber: #C77A2E;         /* 3.05:1 di atas bg — JANGAN dipakai sbg warna teks body */
+  --color-amber-dark: #A8641F;    /* 4.24:1 di atas bg — aman untuk teks/link kecil jika perlu */
+  --color-amber-tint: #F3E3D1;
+
+  /* ---------- Color: Structural lines ---------- */
+  --color-hairline: #D8D5CE;
+  --color-hairline-strong: #B9B5AC;
+
+  /* ---------- Color: Semantic ---------- */
+  --color-success: #3F6B4E;
+  --color-error: #A63A2C;
+  --color-focus-ring: #A8641F;    /* amber-dark dipakai utk focus ring agar tetap ≥3:1 non-text di semua latar */
+
+  /* ---------- Typography: Font family ---------- */
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* ---------- Typography: Weight ---------- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---------- Typography: Line height ---------- */
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-mono: 1.4;
+
+  /* ---------- Typography: Letter spacing ---------- */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Container ---------- */
+  --container-max: 1280px;
+  --container-narrow: 760px;
+  --container-wide: 1440px;
+  --container-padding-desktop: 64px;
+  --container-padding-tablet: 40px;
+  --container-padding-mobile: 20px;
+
+  /* ---------- Border & radius ---------- */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* ---------- Animation ---------- */
+  --duration-fast: 120ms;
+  --duration-base: 220ms;
+  --duration-slow: 360ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --reveal-distance: 8px;
+}
