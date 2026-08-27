@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { Project } from "../../data/projects";
 import { getProjectAlt } from "../../data/projects";
 import PlaceholderImage from "../ui/PlaceholderImage";
@@ -27,11 +28,93 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
   const alt = getProjectAlt(project);
   const aspect = featured ? "aspect-[16/9]" : "aspect-[4/3]";
+  const imageSources = project.images?.length ? project.images : project.image ? [project.image] : [];
+  const [activeImage, setActiveImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (imageSources.length < 2 || isPaused) return;
+
+    const slideshow = window.setInterval(() => {
+      setActiveImage((current) => (current + 1) % imageSources.length);
+    }, 4000);
+
+    return () => window.clearInterval(slideshow);
+  }, [imageSources.length, isPaused]);
+
+  useEffect(() => {
+    if (!isGalleryOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      if (selectedImage !== null) {
+        setSelectedImage(null);
+      } else {
+        setIsGalleryOpen(false);
+      }
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isGalleryOpen, selectedImage]);
+
+  const openGallery = () => setIsGalleryOpen(true);
 
   return (
-    <article className="h-full flex flex-col bg-bg-elevated border border-hairline rounded-md overflow-hidden">
-      {project.image ? (
-        <img src={project.image} alt={alt} className={`w-full ${aspect} object-cover`} />
+    <article
+      className="h-full flex flex-col bg-bg-elevated border border-hairline rounded-md overflow-hidden cursor-pointer"
+      role="button"
+      tabIndex={0}
+      aria-label={`Buka galeri foto ${project.category}`}
+      onClick={openGallery}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openGallery();
+        }
+      }}
+    >
+      {imageSources.length ? (
+        <div
+          className={`relative w-full ${aspect} overflow-hidden`}
+          aria-roledescription={imageSources.length > 1 ? "carousel" : undefined}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocus={() => setIsPaused(true)}
+          onBlur={() => setIsPaused(false)}
+        >
+          {imageSources.map((source, index) => (
+            <img
+              key={source}
+              src={source}
+              alt={index === activeImage ? alt : ""}
+              aria-hidden={index !== activeImage}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+                index === activeImage ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+          {imageSources.length > 1 && (
+            <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5" aria-label="Pilih foto proyek">
+              {imageSources.map((source, index) => (
+                <button
+                  key={source}
+                  type="button"
+                  aria-label={`Tampilkan foto ${index + 1}`}
+                  aria-current={index === activeImage}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setActiveImage(index);
+                  }}
+                  className={`h-1.5 rounded-full transition-all ${
+                    index === activeImage ? "w-5 bg-white" : "w-1.5 bg-white/60"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       ) : (
         <PlaceholderImage label={alt} aspect={aspect} />
       )}
@@ -64,6 +147,91 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           )}
         </div>
       </div>
+
+      {isGalleryOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 md:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={`gallery-title-${project.id}`}
+          onClick={() => setIsGalleryOpen(false)}
+        >
+          <div
+            className="relative max-h-full w-full max-w-5xl overflow-y-auto rounded-md bg-bg-elevated p-5 md:p-8"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-wide text-amber-dark">
+                  {project.category}
+                </span>
+                <h2 id={`gallery-title-${project.id}`} className="mt-2 text-xl font-display font-semibold text-text md:text-2xl">
+                  {project.title}
+                </h2>
+              </div>
+              <button
+                type="button"
+                aria-label="Tutup galeri"
+                onClick={() => setIsGalleryOpen(false)}
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-hairline text-xl text-text-muted hover:bg-bg-muted"
+              >
+                ×
+              </button>
+            </div>
+
+            {imageSources.length ? (
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+                {imageSources.map((source, index) => (
+                  <button
+                    key={source}
+                    type="button"
+                    aria-label={`Perbesar foto ${index + 1}`}
+                    onClick={() => setSelectedImage(index)}
+                    className="group relative aspect-[4/3] w-full overflow-hidden rounded-sm"
+                  >
+                    <img
+                      src={source}
+                      alt={`${alt}, foto ${index + 1}`}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/0 text-white opacity-0 transition-opacity group-hover:bg-black/25 group-hover:opacity-100">
+                      <span className="rounded-full bg-black/60 px-3 py-1.5 text-xs">Perbesar</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <PlaceholderImage label={alt} aspect="aspect-[4/3]" />
+            )}
+          </div>
+        </div>
+      )}
+
+      {selectedImage !== null && imageSources[selectedImage] && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 md:p-10"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Foto ${selectedImage + 1} dari ${imageSources.length}`}
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative flex h-full w-full items-center justify-center" onClick={(event) => event.stopPropagation()}>
+            <img
+              src={imageSources[selectedImage]}
+              alt={`${alt}, foto ${selectedImage + 1}`}
+              className="max-h-full max-w-full object-contain"
+            />
+            <button
+              type="button"
+              aria-label="Tutup foto diperbesar"
+              onClick={() => setSelectedImage(null)}
+              className="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-2xl text-white hover:bg-black/80"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </article>
   );
 }

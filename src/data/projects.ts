@@ -38,6 +38,8 @@ export type Project = {
    * jelas ditandai, bukan broken image.
    */
   image?: string;
+  /** Beberapa foto proyek untuk slideshow autoplay di ProjectCard. */
+  images?: string[];
 };
 
 /** Placeholder netral untuk client yang belum dikonfirmasi untuk dipublikasikan. */
@@ -64,6 +66,12 @@ export const projects: Project[] = [
     client: UNCONFIRMED_CLIENT_LABEL,
     description:
       "Produksi media promosi cetak untuk mendukung kebutuhan komunikasi visual klien.",
+    images: [
+    "/images/tes1.jpeg",
+    "/images/tes-2.jpeg",
+    "/images/tes-3.jpeg",
+    "/images/tes-4.jpeg",
+  ],
   },
   {
     id: "pengadaan-perlengkapan-kantor",
