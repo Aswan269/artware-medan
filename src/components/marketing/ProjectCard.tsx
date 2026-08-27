@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Project } from "../../data/projects";
 import { getProjectAlt } from "../../data/projects";
 import PlaceholderImage from "../ui/PlaceholderImage";
@@ -45,7 +46,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
   }, [imageSources.length, isPaused]);
 
   useEffect(() => {
-    if (!isGalleryOpen) return;
+    if (!isGalleryOpen && selectedImage === null) return;
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
@@ -148,7 +149,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         </div>
       </div>
 
-      {isGalleryOpen && (
+      {isGalleryOpen && createPortal(
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 md:p-8"
           role="dialog"
@@ -186,7 +187,10 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
                     key={source}
                     type="button"
                     aria-label={`Perbesar foto ${index + 1}`}
-                    onClick={() => setSelectedImage(index)}
+                    onClick={() => {
+                      setIsGalleryOpen(false);
+                      setSelectedImage(index);
+                    }}
                     className="group relative aspect-[4/3] w-full overflow-hidden rounded-sm"
                   >
                     <img
@@ -204,12 +208,13 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               <PlaceholderImage label={alt} aspect="aspect-[4/3]" />
             )}
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
 
-      {selectedImage !== null && imageSources[selectedImage] && (
+      {selectedImage !== null && imageSources[selectedImage] && createPortal(
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 md:p-10"
+          className="fixed inset-0 z-[60] flex h-[100dvh] w-screen items-center justify-center bg-black/85 p-6 md:p-10"
           role="dialog"
           aria-modal="true"
           aria-label={`Foto ${selectedImage + 1} dari ${imageSources.length}`}
@@ -219,18 +224,19 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
             <img
               src={imageSources[selectedImage]}
               alt={`${alt}, foto ${selectedImage + 1}`}
-              className="max-h-full max-w-full object-contain"
+              className="max-h-[calc(100dvh-3rem)] max-w-[calc(100vw-3rem)] rounded-lg object-contain shadow-2xl md:max-h-[calc(100dvh-5rem)] md:max-w-[calc(100vw-5rem)]"
             />
             <button
               type="button"
               aria-label="Tutup foto diperbesar"
               onClick={() => setSelectedImage(null)}
-              className="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-2xl text-white hover:bg-black/80"
+              className="fixed left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-2xl text-black hover:bg-white md:left-6 md:top-6"
             >
               ×
             </button>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </article>
   );
