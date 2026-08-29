@@ -53,14 +53,14 @@ export default function ContactInfo() {
                 <dt className="font-mono text-xs tracking-wide uppercase text-text-faint">
                   Email
                 </dt>
-                <dd className="text-base text-text-muted">Email akan ditambahkan</dd>
+                <dd className="text-base text-text-muted">artwaremedan@gmail.com</dd>
               </div>
 
               <div className="flex flex-col gap-1">
                 <dt className="font-mono text-xs tracking-wide uppercase text-text-faint">
                   Alamat
                 </dt>
-                <dd className="text-base text-text-muted">Alamat akan ditambahkan</dd>
+                <dd className="text-base text-text-muted">Jalan Karya Cilincing Gang Cikalong, Karang Berombak, Kota Medan, Sumatera Utara</dd>
               </div>
 
               <div className="flex flex-col gap-1">
@@ -68,7 +68,7 @@ export default function ContactInfo() {
                   Jam Operasional
                 </dt>
                 <dd className="text-base text-text-muted">
-                  Jam operasional akan ditambahkan
+                  08.00–20.00 WIB
                 </dd>
               </div>
             </dl>

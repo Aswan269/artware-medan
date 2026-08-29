@@ -67,11 +67,11 @@ export const projects: Project[] = [
     description:
       "Produksi media promosi cetak untuk mendukung kebutuhan komunikasi visual klien.",
     images: [
-    "/images/tes1.jpeg",
-    "/images/tes-2.jpeg",
-    "/images/tes-3.jpeg",
-    "/images/tes-4.jpeg",
-  ],
+      "/images/printing-media/banner-santunan.jpeg",
+      "/images/printing-media/poster-pekerja-rentan.jpeg",
+      "/images/printing-media/poster-pensiun.jpeg",
+      "/images/printing-media/tes-2.jpeg",
+    ],
   },
   {
     id: "pengadaan-perlengkapan-kantor",
@@ -81,6 +81,13 @@ export const projects: Project[] = [
     client: UNCONFIRMED_CLIENT_LABEL,
     description:
       "Pengadaan dan pemasangan perlengkapan kantor untuk mendukung operasional harian.",
+    images: [
+      "/images/perlengkapan-kantor/papan-nama.jpeg",
+      "/images/perlengkapan-kantor/huruf-akrilik.jpeg",
+      "/images/perlengkapan-kantor/booth-jmo.jpeg",
+      "/images/perlengkapan-kantor/papan-informasi.jpeg",
+      "/images/perlengkapan-kantor/tes-4.jpeg",
+    ],
   },
   {
     id: "produksi-perlengkapan-event-korporat",
@@ -90,6 +97,13 @@ export const projects: Project[] = [
     client: UNCONFIRMED_CLIENT_LABEL,
     description:
       "Penyediaan perlengkapan dan produksi pendukung untuk kegiatan/event perusahaan.",
+    images: [
+      "/images/kebutuhan-event/backdrop-rakornis.jpeg",
+      "/images/kebutuhan-event/panggung-rakornis.jpeg",
+      "/images/kebutuhan-event/booth-promosi.jpeg",
+      "/images/kebutuhan-event/tenda-promosi.jpeg",
+      "/images/kebutuhan-event/tes-3.jpeg",
+    ],
   },
   {
     id: "pekerjaan-custom-borongan",
@@ -99,6 +113,15 @@ export const projects: Project[] = [
     client: UNCONFIRMED_CLIENT_LABEL,
     description:
       "Pekerjaan sesuai spesifikasi klien dalam jumlah besar atau kebutuhan gabungan.",
+    images: [
+      "/images/custom-borongan/fabrikasi-signage.jpeg",
+      "/images/custom-borongan/box-promosi.jpeg",
+      "/images/custom-borongan/papan-evakuasi.jpeg",
+      "/images/custom-borongan/papan-motto.jpeg",
+      "/images/custom-borongan/papan-parkir.jpeg",
+      "/images/custom-borongan/papan-petunjuk.jpeg",
+      "/images/custom-borongan/tes1.jpeg",
+    ],
   },
   {
     id: "produksi-spanduk-banner",
@@ -107,5 +130,10 @@ export const projects: Project[] = [
     location: "Medan",
     client: UNCONFIRMED_CLIENT_LABEL,
     description: "Produksi spanduk dan banner untuk kebutuhan promosi dan informasi.",
+    images: [
+      "/images/printing-media/banner-farewell.jpeg",
+      "/images/printing-media/brosur-jht.jpeg",
+      "/images/printing-media/kartu-peserta.jpeg",
+    ],
   },
 ];

@@ -1,7 +1,6 @@
 import Container from "../layout/Container";
 import Button from "../ui/Button";
 import EyebrowLabel from "../ui/EyebrowLabel";
-import PlaceholderImage from "../ui/PlaceholderImage";
 import { CONTACT } from "../../config/contact";
 
 const serviceTags = ["Kebutuhan Kantor", "Kebutuhan Event", "Printing & Media Promosi", "Custom / Borongan"];
@@ -59,7 +58,11 @@ export default function Hero() {
 
           {/* Kolom visual */}
           <div className="md:col-span-6">
-            <PlaceholderImage label="Contoh dokumentasi proyek Artware Medan (foto asli menyusul)" />
+            <img
+              src="/images/kebutuhan-event/panggung-rakornis.jpeg"
+              alt="Panggung event dengan backdrop dan layar LED"
+              className="aspect-[4/3] w-full border border-hairline-strong object-cover"
+            />
           </div>
         </div>
       </Container>

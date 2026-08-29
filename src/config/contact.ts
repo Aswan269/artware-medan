@@ -2,7 +2,7 @@
  * PLACEHOLDER — ganti dengan data kontak asli Artware Medan sebelum go-live.
  */
 export const CONTACT = {
-  whatsappNumber: "6281360907294", // format internasional tanpa "+", GANTI dengan nomor asli
+  whatsappNumber: "6285262684999", // format internasional tanpa "+", GANTI dengan nomor asli
   get whatsappUrl() {
     return `https://wa.me/${this.whatsappNumber}`;
   },
