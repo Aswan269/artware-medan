@@ -85,7 +85,7 @@ function validate(data: QuoteFormData): FormErrors {
 
 function buildWhatsappSummary(data: QuoteFormData, categoryLabel: string): string {
   const lines = [
-    "Halo Artware Medan, saya ingin menanyakan penawaran dengan detail berikut:",
+    "Halo Jasa Borongan Medan, saya ingin menanyakan penawaran dengan detail berikut:",
     "",
     `Nama: ${data.name}`,
   ];
@@ -155,7 +155,7 @@ export default function QuoteForm() {
           Data permintaan Anda sudah siap.
         </h3>
         <p className="mt-2 text-sm md:text-base text-text-muted leading-relaxed">
-          Permintaan belum terkirim ke Artware secara otomatis. Silakan lanjutkan melalui
+          Permintaan belum terkirim ke Jasa Borongan Medan secara otomatis. Silakan lanjutkan melalui
           WhatsApp agar tim kami dapat segera menindaklanjuti kebutuhan Anda.
         </p>
 
@@ -366,7 +366,7 @@ export default function QuoteForm() {
             rows={3}
             value={form.notes}
             onChange={(e) => updateField("notes", e.target.value)}
-            placeholder="Informasi lain yang perlu diketahui tim Artware"
+            placeholder="Informasi lain yang perlu diketahui tim Jasa Borongan Medan"
             className={`${inputClass} resize-y`}
           />
         </FormField>

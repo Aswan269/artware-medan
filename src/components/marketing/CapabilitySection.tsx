@@ -4,7 +4,7 @@ import Reveal from "../ui/Reveal";
 import { capabilities } from "../../data/capabilities";
 
 /**
- * CapabilitySection — section "Tentang Artware" / Capability Statement.
+ * CapabilitySection — section "Tentang Jasa Borongan Medan" / Capability Statement.
  *
  * Komposisi SENGAJA berbeda dari section sebelumnya, supaya homepage tidak
  * terasa seperti "Hero → Card Grid → Portfolio Card → Card Grid lagi":
@@ -34,7 +34,7 @@ export default function CapabilitySection() {
       {/* 1. Section introduction */}
       <Container>
         <Reveal className="max-w-[680px]">
-          <EyebrowLabel>Tentang Artware</EyebrowLabel>
+          <EyebrowLabel>Tentang Jasa Borongan</EyebrowLabel>
           <h2
             id="capability-heading"
             className="mt-4 text-3xl md:text-4xl lg:text-[48px] font-display font-semibold text-text leading-tight"
@@ -42,7 +42,7 @@ export default function CapabilitySection() {
             Partner kerja untuk kebutuhan produksi, kantor, dan event
           </h2>
           <p className="mt-4 text-base md:text-lg text-text-muted leading-relaxed">
-            Artware Medan banyak menangani kebutuhan operasional untuk perusahaan,
+            Jasa Borongan Medan banyak menangani kebutuhan operasional untuk perusahaan,
             kantor, dan berbagai instansi — mulai dari kebutuhan yang bersifat rutin
             hingga permintaan yang sifatnya custom dan borongan.
           </p>
@@ -107,7 +107,7 @@ export default function CapabilitySection() {
           <div className="md:col-span-7 md:col-start-6">
             <p className="text-base md:text-lg text-text-muted leading-relaxed">
               Tidak semua kebutuhan kantor atau event datang dengan spesifikasi yang
-              sama. Artware dapat menyesuaikan pekerjaan berdasarkan permintaan
+              sama. Jasa Borongan Medan dapat menyesuaikan pekerjaan berdasarkan permintaan
               spesifik klien, termasuk pengerjaan dalam jumlah besar (borongan)
               maupun kebutuhan yang menggabungkan beberapa jenis pekerjaan
               sekaligus.
@@ -119,7 +119,7 @@ export default function CapabilitySection() {
         <div className="mt-16 md:mt-24 max-w-[720px]">
           <p className="font-display font-medium text-xl md:text-2xl text-text leading-snug">
             Untuk kebutuhan yang lebih spesifik atau di luar kategori standar, tim
-            Artware dapat membahas detail pekerjaan sesuai proyek Anda.
+            Jasa Borongan Medan dapat membahas detail pekerjaan sesuai proyek Anda.
           </p>
         </div>
       </Container>

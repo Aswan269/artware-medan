@@ -41,7 +41,7 @@ export default function ServiceGrid() {
 
           <div className="md:col-span-4 md:col-start-9">
             <p className="text-base md:text-lg text-text-muted leading-relaxed">
-              Artware Medan menangani beragam kebutuhan perusahaan, kantor,
+              Jasa Borongan Medan menangani beragam kebutuhan perusahaan, kantor,
               instansi, dan event — dari perlengkapan rutin hingga pekerjaan
               custom dan borongan sesuai spesifikasi klien.
             </p>

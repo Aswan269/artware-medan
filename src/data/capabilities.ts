@@ -1,7 +1,7 @@
 /**
- * DATA CAPABILITY — ARTWARE MEDAN
+ * DATA CAPABILITY — JASA BORONGAN MEDAN
  * ----------------------------------------------------------------
- * Daftar cakupan kemampuan Artware untuk section "Tentang Artware".
+ * Daftar cakupan kemampuan Jasa Borongan Medan untuk section "Tentang Jasa Borongan Medan".
  *
  * PENTING:
  * - Ini adalah gambaran CAKUPAN kemampuan, bukan katalog produk final.

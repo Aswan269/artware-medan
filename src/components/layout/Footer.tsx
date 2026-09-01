@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           <div className="md:col-span-4">
             <p className="font-display font-semibold text-lg text-text-on-navy">
-              Artware Medan
+              Jasa Borongan Medan
             </p>
             <p className="mt-3 text-sm text-text-on-navy/70 leading-relaxed max-w-[280px]">
               Vendor kebutuhan kantor, event, printing &amp; media promosi, serta
@@ -100,7 +100,7 @@ export default function Footer() {
 
         <div className="py-6 border-t border-bg/15 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-xs text-text-on-navy/60">
-            © {year} Artware Medan. Seluruh hak cipta dilindungi.
+            © {year} Jasa Borongan Medan. Seluruh hak cipta dilindungi.
           </p>
           <a href={CONTACT.whatsappUrl} className={navLinkClass}>
             Hubungi via WhatsApp

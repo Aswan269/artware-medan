@@ -1,5 +1,5 @@
 /**
- * DATA LAYANAN — ARTWARE MEDAN
+ * DATA LAYANAN — JASA BORONGAN MEDAN
  * ----------------------------------------------------------------
  * Sumber data tunggal untuk section "Layanan".
  *

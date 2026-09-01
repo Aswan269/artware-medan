@@ -44,7 +44,7 @@ export default function QuoteSection() {
               Sampaikan kebutuhan Anda
             </h2>
             <p className="mt-4 text-base text-text-muted leading-relaxed">
-              Isi form berikut agar tim Artware dapat memahami kebutuhan Anda —
+              Isi form berikut agar tim Jasa Borongan Medan dapat memahami kebutuhan Anda —
               baik untuk pekerjaan rutin, custom, maupun borongan — sebelum
               menyiapkan penawaran.
             </p>

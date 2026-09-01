@@ -7,7 +7,7 @@ const serviceTags = ["Kebutuhan Kantor", "Kebutuhan Event", "Printing & Media Pr
 
 /**
  * Hero — §4 revisi: prioritas business clarity.
- * Pengunjung harus langsung paham: apa itu Artware, layanan utama,
+ * Pengunjung harus langsung paham: apa itu Jasa Borongan Medan, layanan utama,
  * area layanan, dan cara menghubungi — tanpa klaim angka/statistik (revisi #8).
  */
 export default function Hero() {
@@ -27,7 +27,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 text-base md:text-lg text-text-muted leading-relaxed max-w-[520px]">
-              Artware Medan melayani perusahaan, instansi, dan event organizer di{" "}
+              Jasa Borongan Medan melayani perusahaan, instansi, dan event organizer di{" "}
               <span className="text-text font-medium">Sumatera Utara &amp; Aceh</span> — mulai
               dari pesanan kebutuhan kantor rutin hingga pekerjaan custom dan borongan skala
               besar, dikerjakan sesuai standar yang bisa diandalkan.

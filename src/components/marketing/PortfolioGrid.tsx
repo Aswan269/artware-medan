@@ -46,7 +46,7 @@ export default function PortfolioGrid() {
             Sebagian dari pekerjaan yang telah kami kerjakan
           </h2>
           <p className="mt-4 text-base md:text-lg text-text-muted leading-relaxed">
-            Beberapa contoh pekerjaan yang menggambarkan cakupan layanan Artware Medan
+            Beberapa contoh pekerjaan yang menggambarkan cakupan layanan Jasa Borongan Medan
             untuk perusahaan, instansi, dan event. Dokumentasi foto akan terus
             diperbarui.
           </p>

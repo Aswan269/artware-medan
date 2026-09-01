@@ -1,5 +1,5 @@
 /**
- * PLACEHOLDER — ganti dengan data kontak asli Artware Medan sebelum go-live.
+ * PLACEHOLDER — ganti dengan data kontak asli Jasa Borongan Medan sebelum go-live.
  */
 export const CONTACT = {
   whatsappNumber: "6285262684999", // format internasional tanpa "+", GANTI dengan nomor asli

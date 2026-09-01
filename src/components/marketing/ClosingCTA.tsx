@@ -38,7 +38,7 @@ export default function ClosingCTA() {
           </h2>
 
           <p className="mt-4 text-base md:text-lg text-text-on-navy leading-relaxed max-w-[520px]">
-            Hubungi Artware Medan untuk membahas kebutuhan kantor, event, printing,
+            Hubungi Jasa Borongan Medan untuk membahas kebutuhan kantor, event, printing,
             custom, atau pekerjaan borongan Anda.
           </p>
 

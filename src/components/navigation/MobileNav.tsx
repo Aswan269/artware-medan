@@ -51,7 +51,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
     >
       <div className="flex items-center justify-between px-5 h-16 border-b border-hairline">
         <span className="font-display font-semibold text-lg text-navy">
-          Artware Medan
+          Jasa Borongan Medan
         </span>
         <button
           type="button"

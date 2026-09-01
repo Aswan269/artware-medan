@@ -37,7 +37,7 @@ export default function Navbar() {
             href="/"
             className="font-display font-semibold text-base sm:text-lg md:text-xl text-navy tracking-tight whitespace-nowrap shrink-0"
           >
-            Artware Medan
+            Jasa Borongan Medan
           </a>
 
           {/* Nav desktop */}
